@@ -1,25 +1,35 @@
 <template>
     <div class="container">
-        <div>
-            <h1>Hello World</h1>
-        </div>
+        <h1>{{title}}</h1>
+        <Button text ="Add Task" theClass="btn-success"/>    
     </div>
 </template>
 
-<script>
+<script> 
+import Button from './Button.vue';
+
 export default {
     name: "Header",
-    data() {
-        return {
-            message: "Hellooooo"
-        }
+    props: {
+        title: String
     },
+    components: {
+        Button
+    }
 }
 </script>
 
 <style scoped>
 .container{
     margin: 2%;
-    color: rgb(13, 86, 135);
+    color: rgb(51, 51, 51);
+    padding: 1rem;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+h1{
+    font-weight: bolder;
 }
 </style>
