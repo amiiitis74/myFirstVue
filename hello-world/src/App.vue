@@ -1,6 +1,7 @@
 <template>
   <div id="app" >
     <div class="myPlace">
+      <AddTask />
       <Header title="Task Tracker"/>
       <Tasks  
       @delete-task="deleteTask" 
@@ -10,6 +11,7 @@
 </template>
 
 <script>
+import AddTask from './components/AddTask.vue';
 import Header from './components/Header.vue';
 import Tasks from './components/Tasks.vue';
 
@@ -19,8 +21,9 @@ export default {
   components: {
     Header,
     Tasks,
+    AddTask
   },
-  data(){
+    AddTask(){
     return {
       tasks : []
     }
@@ -58,7 +61,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
